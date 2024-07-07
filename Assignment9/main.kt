@@ -53,6 +53,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -103,17 +104,21 @@ fun LoginScreen() {
         Card(
             modifier = Modifier
                 .height(650.dp)
+
+
+
+
         ) {
             Column(
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(text = "Jetpack Compose" ,color= Color.Blue,style = MaterialTheme.typography.headlineSmall)
+                Text(text = "Jetpack Compose" , color=colorResource(id = R.color.jetpack1),style = MaterialTheme.typography.headlineSmall)
                 Image(painterResource (R.drawable.jetpack_compose_icon_rgb), contentDescription ="jetpack compose logo", modifier = Modifier.size(250.dp) )
                 Text(
                     text = "Login",
-                    color = Color.Green,
+                    color=colorResource(id = R.color.login),
                     fontSize = 35.sp,
                     modifier = Modifier
                         .align(Alignment.Start)
@@ -142,7 +147,7 @@ fun LoginScreen() {
                 )
                 Text(
                     text = "Forgot Password ?",
-                    color = Color.Green,
+                    color=colorResource(id = R.color.login),
                     modifier = Modifier
                         .align(Alignment.End)
                         .padding(10.dp)
@@ -151,7 +156,7 @@ fun LoginScreen() {
                 )
                 Spacer(modifier = Modifier.height(1.dp))
                 Button(
-                    onClick = { /*TODO: Login logic */ },
+                    onClick = { },
                     modifier = Modifier
                         .align(Alignment.Start)
                         .padding(10.dp)
@@ -165,6 +170,9 @@ fun LoginScreen() {
             }
         }
     }
+
+
+
 
 @Composable
 fun register()
